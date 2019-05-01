@@ -1,0 +1,10 @@
+{
+  "extends": ["react-app", "eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["react-hooks", "prettier"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-debugger": "warn",
+    "no-console": "warn"
+  }
+}
