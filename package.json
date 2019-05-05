@@ -1,6 +1,9 @@
 {
   "name": "prettier-react-es",
-  "version": "0.1.0",
+  "description": "Code example to this article: Prettier + ESLint for React. How to KISS",
+  "version": "0.2.0",
+  "author": "Yaroslav Berkut <yaroslav.berkut@gmail.com> (https://iberkut.com)",
+  "homepage": "https://github.com/yberkut/prettier-react-es",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
