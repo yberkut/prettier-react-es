@@ -7,6 +7,7 @@ const App = () => {
   const [title, setTitle] = useState('');
 
   useEffect(() => {
+    debugger;
     setTitle(initialTitle);
   }, []);
 
