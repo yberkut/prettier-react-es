@@ -1,7 +1,7 @@
 {
   "name": "prettier-react-es",
   "description": "Code example to this article: Prettier + ESLint for React. How to KISS",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Yaroslav Berkut <yaroslav.berkut@gmail.com> (https://iberkut.com)",
   "homepage": "https://github.com/yberkut/prettier-react-es",
   "private": true,
@@ -15,11 +15,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint \"src/**/*.js\"",
+    "validate": "npm run lint && cross-env CI=true npm test",
+    "format": "prettier --write \"src/**/*.js\"",
     "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "src/**/*.js": ["prettier --write", "git add"]
   },
   "husky": {
     "hooks": {
-      "post-checkout": "npm run lint && cross-env CI=true npm test"
+      "post-checkout": "lint-staged",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run validate"
     }
   },
   "browserslist": {
@@ -40,6 +47,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react-hooks": "^1.6.0",
     "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
     "prettier": "1.17.0"
   }
 }
